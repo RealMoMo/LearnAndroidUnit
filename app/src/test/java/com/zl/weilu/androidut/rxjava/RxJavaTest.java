@@ -1,7 +1,12 @@
 package com.zl.weilu.androidut.rxjava;
 
+import com.zl.weilu.androidut.net.RxJavaRule;
+
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,10 +17,13 @@ import io.reactivex.observers.TestObserver;
 import io.reactivex.schedulers.TestScheduler;
 import io.reactivex.subscribers.TestSubscriber;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+
 /**
  * Created by weilu on 2018/1/5.
  */
-
 public class RxJavaTest {
 
     private TestScheduler mTestScheduler;
@@ -25,9 +33,9 @@ public class RxJavaTest {
 
         TestObserver<Integer> testObserver = TestObserver.create();
         testObserver.onNext(1);
-        testObserver.onNext(2);
+        testObserver.onNext(3);
         //断言值是否相等
-        testObserver.assertValues(1, 2);
+        testObserver.assertValues(1, 3);
 
         testObserver.onComplete();
         //断言是否完成
@@ -158,4 +166,7 @@ public class RxJavaTest {
         testSubscriber.assertValueCount(1);
         testSubscriber.assertTerminated();
     }
+
+
+
 }

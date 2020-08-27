@@ -10,7 +10,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.rule.PowerMockRule;
 
 /**
- * @Description: mock new方法
+ * @Description: mock new方法  （构造方法）
  * @Author: weilu
  * @Time: 2017/11/18 19:30.
  */

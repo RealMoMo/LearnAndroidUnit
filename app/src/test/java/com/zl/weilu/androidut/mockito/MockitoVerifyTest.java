@@ -33,7 +33,10 @@ public class MockitoVerifyTest {
         verify(mPerson, after(1000)).getAge();
         System.out.println(System.currentTimeMillis());
         // 抛出异常
-//        verify(mPerson, atLeast(2)).getAge();
+        mPerson.getSex();
+        //mPerson.getSex();
+        verify(mPerson, atLeast(2)).getSex();
+
     }
 
     @Test

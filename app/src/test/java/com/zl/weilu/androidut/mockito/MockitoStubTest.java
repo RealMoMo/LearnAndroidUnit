@@ -33,17 +33,24 @@ public class MockitoStubTest {
     @Test
     public void testPersonReturn(){
         when(mPerson.getName()).thenReturn("小明");
-        when(mPerson.getSex()).thenThrow(new NullPointerException("滑稽：性别不明"));
-        
+//        when(mPerson.getSex()).thenThrow(new NullPointerException("滑稽：性别不明"));
+        when(mPerson.getSex()).thenThrow(new IllegalArgumentException("滑稽：性别不明"));
+
+
         // 输出"小明"
         System.out.println(mPerson.getName());
 
         doReturn("小小").when(mPerson).getName();
+
         // 输出"小小"
         System.out.println(mPerson.getName());
-        
+
+        when(mPerson.getName()).thenReturn("小明");
+        // 输出"小明"
+        System.out.println(mPerson.getName());
+
         // 抛出异常
-//        System.out.println(mPerson.getSex());
+        //System.out.println(mPerson.getSex());
 
     }
 
@@ -60,7 +67,7 @@ public class MockitoStubTest {
         //第一次什么都不做
         mPerson.setSex(1);
         //异常抛出在下面这行
-//        mPerson.setSex(1);
+        mPerson.setSex(1);
     }
     
     @Test

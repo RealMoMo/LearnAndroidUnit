@@ -6,6 +6,7 @@ import com.zl.weilu.androidut.bean.Person;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -37,13 +38,13 @@ public class MockitoSpyTest {
 
     @Test
     public void testPersonSpy(){
-        //输出11
-        System.out.print(mPerson.getAge());
+        //输出11,若用Mock Person 输出为默认值0
+        System.out.println(mPerson.getAge());
     }
 
     @Test
     public void testHomeInjectMocks(){
         when(mPerson.getName()).thenReturn("weilu");
-        System.out.print(mHome.getMaster());
+        System.out.println(mHome.getMaster());
     }
 }
